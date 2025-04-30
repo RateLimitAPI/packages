@@ -1,0 +1,28 @@
+{
+  "name": "ratelimitapi",
+  "version": "0.1.0",
+  "description": "Rate limiting middleware for APIs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AussieScorcher/ratelimitapi-package.git"
+  },
+  "keywords": [
+  "ratelimit", "middleware", "api", "rate limiting"
+  ],
+  "author": "RatLimitAPI",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AussieScorcher/ratelimitapi-package/issues"
+  },
+  "homepage": "https://github.com/AussieScorcher/ratelimitapi-package#readme",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,24 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+*.log
+
+# TypeScript cache
+*.tsbuildinfo
+
+# npm package lock file (optional, only if you're not planning to publish the lock file)
+package-lock.json
+
+# MacOS specific files
+.DS_Store
+
+# IDE/editor specific files
+.vscode/
+.idea/
+
+# Environment files
+.env

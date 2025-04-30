@@ -1,0 +1,19 @@
+# Exclude all source code
+src/
+
+# Exclude build artifacts
+dist/
+
+# Exclude local configuration files
+.gitignore
+.npmignore
+.env
+
+# Exclude tests or example files
+tests/
+example/
+
+# Exclude IDE settings or other OS-specific files
+.idea/
+.vscode/
+.DS_Store
