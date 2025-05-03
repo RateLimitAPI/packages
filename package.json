@@ -19,9 +19,9 @@
   "license": "MIT",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/AussieScorcher/ratelimitapi-package/issues"
+    "url": "https://github.com/ratelimitapi/package/issues"
   },
-  "homepage": "https://github.com/AussieScorcher/ratelimitapi-package#readme",
+  "homepage": "https://github.com/ratelimitapi/package#readme",
   "devDependencies": {
     "typescript": "^5.8.3"
   }
