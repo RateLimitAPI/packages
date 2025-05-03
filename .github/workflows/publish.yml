@@ -1,4 +1,4 @@
-name: Publish to NPM
+name: Publish Packages
 
 on:
   push:
@@ -6,7 +6,8 @@ on:
       - main
 
 jobs:
-  publish:
+  publish-npm:
+    name: Publish Node Package to npm
     runs-on: ubuntu-latest
 
     steps:
@@ -23,11 +24,12 @@ jobs:
         run: npm install
 
       - name: Build package
-        run: npm run build
+        run: npm run build-node
 
-      - name: Check if version is new
+      - name: Check if Node version is new
         id: check-version
         run: |
+          cd packages/node
           LOCAL_VERSION=$(node -p "require('./package.json').version")
           PUBLISHED_VERSION=$(npm view ratelimitapi version || echo "0.0.0")
           echo "Local: $LOCAL_VERSION"
@@ -42,6 +44,54 @@ jobs:
 
       - name: Publish to NPM
         if: steps.check-version.outputs.should_publish == 'true'
-        run: npm publish --access public
+        run: |
+          cd packages/node
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-pypi:
+    name: Publish Python Package to PyPI
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install Python build dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install build twine setuptools wheel
+          
+      - name: Check if Python version is new
+        id: check-py-version
+        run: |
+          cd packages/python
+          LOCAL_VERSION=$(python setup.py --version)
+          PUBLISHED_VERSION=$(pip index versions ratelimitapi 2>/dev/null | grep -m1 "ratelimitapi" | sed 's/.*(\(.*\))/\1/' || echo "0.0.0")
+          echo "Local: $LOCAL_VERSION"
+          echo "Published: $PUBLISHED_VERSION"
+          if [ "$LOCAL_VERSION" = "$PUBLISHED_VERSION" ]; then
+            echo "No new version to publish."
+            echo "should_publish=false" >> $GITHUB_OUTPUT
+          else
+            echo "New version detected."
+            echo "should_publish=true" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Build Python package
+        run: |
+          cd packages/python
+          python -m build
+          
+      - name: Publish to PyPI
+        if: steps.check-py-version.outputs.should_publish == 'true'
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: packages/python/dist/
+          password: ${{ secrets.PYPI_API_TOKEN }}

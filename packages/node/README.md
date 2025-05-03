@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/ratelimitapi.svg)](https://www.npmjs.com/package/ratelimitapi)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![GitHub Actions publish workflow status](https://github.com/ratelimitapi/package/actions/workflows/publish.yml/badge.svg)
+![GitHub Actions publish workflow status](https://github.com/ratelimitapi/packages/actions/workflows/publish.yml/badge.svg)
 
 **This package is currently in early development and not ready for production use.**
 
@@ -53,7 +53,7 @@ This project is licensed under the MIT License - see the package for details.
 
 ## Stay Updated
 
-- Star our [GitHub repository](https://github.com/ratelimitapi/package)
+- Star our [GitHub repository](https://github.com/ratelimitapi/packages)
 - Follow our progress on Twitter (coming soon)
 - Join our community Discord (coming soon)
 

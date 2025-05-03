@@ -3,6 +3,8 @@ node_modules/
 
 # Build output
 dist/
+build/
+*.egg-info/
 
 # Logs
 *.log
@@ -22,3 +24,25 @@ package-lock.json
 
 # Environment files
 .env
+
+# Python specific
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.egg
+dist/
+sdist/
+wheels/
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
