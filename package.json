@@ -1,12 +1,15 @@
 {
   "name": "ratelimitapi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rate limiting middleware for APIs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bump-patch": "npm version patch",
+    "bump-minor": "npm version minor",
+    "bump-major": "npm version major"
   },
   "repository": {
     "type": "git",
@@ -22,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/ratelimitapi/package/issues"
   },
-  "homepage": "https://github.com/ratelimitapi/package#readme",
+  "homepage": "https://ratelimitapi.com",
   "devDependencies": {
     "typescript": "^5.8.3"
   }
