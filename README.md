@@ -3,15 +3,14 @@
 [![npm version](https://img.shields.io/npm/v/ratelimitapi.svg)](https://www.npmjs.com/package/ratelimitapi)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+**This package is currently in early development and not ready for production use.**
+
+Features, API, and documentation are subject to change. We are actively working to stabilize the package for a production release.
+
 ## Overview
 
 RateLimitAPI is a powerful rate limiting middleware for APIs, it is currently under development. It provides a simple yet robust solution for implementing industry-standard rate limiting to protect your endpoints from abuse.
 
-## ⚠️ Development Status
-
-**This package is currently in early development and not ready for production use.**
-
-Features, API, and documentation are subject to change. We are actively working to stabilize the package for a production release.
 
 ## Features (Planned)
 
@@ -35,7 +34,7 @@ yarn add ratelimitapi
 
 ## Documentation
 
-Full documentation will be available at [RateLimitAPI.com](https://ratelimitapi.com/docs) upon release.
+Full documentation will be available at [RateLimitAPI.com](https://ratelimitapi.com/docs) upon official release.
 
 ## Usage Preview
 

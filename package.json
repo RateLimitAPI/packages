@@ -10,14 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AussieScorcher/ratelimitapi-package.git"
+    "url": "git+https://github.com/ratelimitapi/package.git"
   },
   "keywords": [
   "ratelimit", "middleware", "api", "rate limiting"
   ],
-  "author": "RatLimitAPI",
+  "author": "Edward <edward@ratelimitapi.com> (https://ratelimitapi.com)",
   "license": "MIT",
   "type": "commonjs",
+  "files": ["dist"],
   "bugs": {
     "url": "https://github.com/ratelimitapi/package/issues"
   },
