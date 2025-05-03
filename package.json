@@ -1,27 +1,32 @@
 {
   "name": "ratelimitapi",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Rate limiting middleware for APIs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bump-patch": "npm version patch",
-    "bump-minor": "npm version minor",
-    "bump-major": "npm version major"
+    "bump-patch": "node -e \"const pkg=require('./package.json');pkg.version=pkg.version.replace(/^(\\d+)\\.(\\d+)\\.(\\d+)$/,(m,p1,p2,p3)=>`${p1}.${p2}.${parseInt(p3)+1}`);require('fs').writeFileSync('package.json',JSON.stringify(pkg,null,2))\"",
+    "bump-minor": "node -e \"const pkg=require('./package.json');pkg.version=pkg.version.replace(/^(\\d+)\\.(\\d+)\\.(\\d+)$/,(m,p1,p2,p3)=>`${p1}.${parseInt(p2)+1}.0`);require('fs').writeFileSync('package.json',JSON.stringify(pkg,null,2))\"",
+    "bump-major": "node -e \"const pkg=require('./package.json');pkg.version=pkg.version.replace(/^(\\d+)\\.(\\d+)\\.(\\d+)$/,(m,p1,p2,p3)=>`${parseInt(p1)+1}.0.0`);require('fs').writeFileSync('package.json',JSON.stringify(pkg,null,2))\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ratelimitapi/package.git"
   },
   "keywords": [
-  "ratelimit", "middleware", "api", "rate limiting"
+    "ratelimit",
+    "middleware",
+    "api",
+    "rate limiting"
   ],
   "author": "Edward <edward@ratelimitapi.com> (https://ratelimitapi.com)",
   "license": "MIT",
   "type": "commonjs",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "bugs": {
     "url": "https://github.com/ratelimitapi/package/issues"
   },
