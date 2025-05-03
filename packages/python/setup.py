@@ -1,9 +1,16 @@
 from setuptools import setup, find_packages
+import os
+
+# Read the contents of README file
+with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
 setup(
     name="ratelimitapi",
-    version="0.1.0",
+    version="0.1.1",
     description="Rate limiting middleware for APIs",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     author="Edward",
     author_email="edward@ratelimitapi.com",
     url="https://ratelimitapi.com",
