@@ -1,5 +1,6 @@
 {
   "name": "packages",
+  "description": "Rate limiting middleware for APIs in multiple languages",
   "workspaces": [
     "packages/node",
     "packages/python"
@@ -7,5 +8,15 @@
   "scripts": {
     "build-node": "npm run -ws build",
     "build-python": "cd packages/python && build.bat" 
-  }
+  },
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ratelimitapi/packages.git"
+  },
+  "author": "Edward <edward@ratelimitapi.com> (https://ratelimitapi.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ratelimitapi/packages/issues"
+  },
+  "homepage": "https://ratelimitapi.com"
 }
