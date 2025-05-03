@@ -19,7 +19,11 @@
     "ratelimit",
     "middleware",
     "api",
-    "rate limiting"
+    "rate limiting",
+    "rate",
+    "limit",
+    "rate-limit",
+    "throttling"
   ],
   "author": "Edward <edward@ratelimitapi.com> (https://ratelimitapi.com)",
   "license": "MIT",
