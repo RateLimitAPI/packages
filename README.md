@@ -2,6 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/ratelimitapi.svg)](https://www.npmjs.com/package/ratelimitapi)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Build status](https://github.com/ratelimitapi/package/actions/workflows/publish.yml/badge.svg)
 
 **This package is currently in early development and not ready for production use.**
 

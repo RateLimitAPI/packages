@@ -16,7 +16,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # or your preferred version
+          node-version: '20'
           registry-url: 'https://registry.npmjs.org/'
 
       - name: Install dependencies
@@ -25,7 +25,23 @@ jobs:
       - name: Build package
         run: npm run build
 
+      - name: Check if version is new
+        id: check-version
+        run: |
+          LOCAL_VERSION=$(node -p "require('./package.json').version")
+          PUBLISHED_VERSION=$(npm view ratelimitapi version || echo "0.0.0")
+          echo "Local: $LOCAL_VERSION"
+          echo "Published: $PUBLISHED_VERSION"
+          if [ "$LOCAL_VERSION" = "$PUBLISHED_VERSION" ]; then
+            echo "No new version to publish."
+            echo "should_publish=false" >> $GITHUB_OUTPUT
+          else
+            echo "New version detected."
+            echo "should_publish=true" >> $GITHUB_OUTPUT
+          fi
+
       - name: Publish to NPM
+        if: steps.check-version.outputs.should_publish == 'true'
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
